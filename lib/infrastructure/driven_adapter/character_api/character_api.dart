@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import "package:http/http.dart" as http;
 import 'package:rick_and_morty/domain/model/character/character.dart';
 import 'package:rick_and_morty/domain/model/character/gateway/character_gateway.dart';
 import 'package:rick_and_morty/infrastructure/driven_adapter/character_api/helpers/maps/character/character_mapper.dart';

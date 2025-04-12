@@ -25,19 +25,15 @@ class _ListCharacterPageState extends State<ListCharacterPage> {
     var _multiCharacterConfig = UseCaseConfig();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme
-            .of(context)
-            .colorScheme
-            .inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Center(
         child: FutureBuilder(
           key: const Key('futureBuilder'),
-          future: _multiCharacterConfig.getMultiCharacterUseCase!
-              .getAllCharacters(_counter.toString()),
-          builder: (context, snapshot) =>
-              asyncSnapshotMultiHelper(snapshot),
+          future: _multiCharacterConfig.getCharacterUseCase!
+              .getCharacterByID(_counter.toString()),
+          builder: (context, snapshot) => asyncSnapshotMultiHelper(snapshot),
         ),
       ),
     );
